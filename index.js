@@ -514,6 +514,17 @@ export function createAnimatableComponent(component) {
         }],
       });
     }
+      
+    largePulse(duration) {
+      return this.animate(duration, {
+        transform: [{
+          scale: this.state.animationValue.interpolate({
+            inputRange: [0, 0.5, 1],
+            outputRange: [1, 1.25, 1],
+          }),
+        }],
+      });
+    }
 
     rotate(duration) {
       return this.animate(duration, {
